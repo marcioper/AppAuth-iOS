@@ -117,7 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (BOOL)shouldHandleURL:(NSURL *)URL {
-  return [[self class] URL:URL matchesRedirectionURL:_request.redirectURL] || [[self class] URL:URL matchesRedirectionURL: [[NSURL alloc] initWithString:@"farmboxscout://callback"]];
+  return [[self class] URL:URL matchesRedirectionURL:_request.redirectURL] || [[self class] URL:URL matchesRedirectionURL: [[NSURL alloc] initWithString:@"i2xfarm://callback"]];
 }
 
 - (BOOL)resumeExternalUserAgentFlowWithURL:(NSURL *)URL {
@@ -250,7 +250,7 @@ NS_ASSUME_NONNULL_BEGIN
   // The logic of when to handle the URL is the same as for authorization requests: should match
   // down to the path component.
   return [[OIDAuthorizationSession class] URL:URL
-                        matchesRedirectionURL:_request.postLogoutRedirectURL] || [[self class] URL:URL matchesRedirectionURL: [[NSURL alloc] initWithString:@"farmboxscout://callback"]];;
+                        matchesRedirectionURL:_request.postLogoutRedirectURL] || [[self class] URL:URL matchesRedirectionURL: [[NSURL alloc] initWithString:@"i2xfarm://callback"]];
 }
 
 - (BOOL)resumeExternalUserAgentFlowWithURL:(NSURL *)URL {
